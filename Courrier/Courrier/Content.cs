@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    class Content
+    public class Content
     {
         String message;
         public Content(String prmMessage)

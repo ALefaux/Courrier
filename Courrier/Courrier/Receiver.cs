@@ -7,7 +7,7 @@ using pqtcity;
 
 namespace pqtcourrier
 {
-    class Receiver
+    public class Receiver
     {
         Inhabitant objInhabitant;
         public Receiver(Inhabitant prmInhabitant)

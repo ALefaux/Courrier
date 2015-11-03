@@ -23,7 +23,7 @@ namespace pqtcity
 
         public int nbCourrier()
         {
-            return listCourrier.LastIndexOf(this);
+            return listCourrier.Count;
         }
 
         public Letter getCourrier(int i)

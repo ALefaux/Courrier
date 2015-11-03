@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pqtcity
 {
-    class BankAccount
+    public class BankAccount
     {
         double amount; //The amount in a count
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    class Letter
+    public class Letter
     {
         Sender objSender;
         Receiver objReceiver;

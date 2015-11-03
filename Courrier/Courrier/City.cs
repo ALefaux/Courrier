@@ -7,7 +7,7 @@ using pqtcourrier;
 
 namespace pqtcity
 {
-    class City
+    public class City
     {
         String nameCity;
         ArrayList listHabitant;
@@ -15,10 +15,12 @@ namespace pqtcity
 
         public City(String prmNameCity)
         {
+            Console.WriteLine("Creating " + prmNameCity + " city");
             nameCity = prmNameCity;
             objPostBox = new PostBox();
             listHabitant = new ArrayList() ;
 
+            Console.WriteLine("Creating 100 inhabitants");
             for(int i = 0; i < 100; i++)
             {
                 listHabitant.Add(new Inhabitant(this));
@@ -33,6 +35,21 @@ namespace pqtcity
         public void distributeLetters()
         {
 
+        }
+
+        public string getNameCity()
+        {
+            return this.nameCity;
+        }
+
+        public int getNumberOfInhabitants()
+        {
+            return listHabitant.Count;
+        }
+
+        public int getNumberOfLetter()
+        {
+            return objPostBox.nbCourrier();
         }
     }
 }

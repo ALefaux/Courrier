@@ -7,7 +7,7 @@ using pqtcourrier;
 
 namespace pqtcity
 {
-    class Inhabitant
+    public class Inhabitant
     {
         BankAccount objBankAccount; //The count of this habitant
         City hisCity; //City where lives this habitant
