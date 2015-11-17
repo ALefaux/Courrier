@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acknowledgment.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Content.cs" />
@@ -53,8 +54,10 @@
     <Compile Include="PromissoryNote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver.cs" />
+    <Compile Include="RegisteredLetter.cs" />
     <Compile Include="Sender.cs" />
     <Compile Include="SimpleLetter.cs" />
+    <Compile Include="UrgentLetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

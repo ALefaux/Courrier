@@ -9,7 +9,7 @@ namespace pqtcourrier
 {
     public class Sender
     {
-        Inhabitant objInhabitant;
+        public Inhabitant objInhabitant;
 
         public Sender(Inhabitant prmInhabitant)
         {

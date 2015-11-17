@@ -4,26 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using pqtcourrier;
+using System.Collections.Generic;
 
 namespace pqtcity
 {
     public class City
     {
         String nameCity;
-        ArrayList listHabitant;
-        PostBox objPostBox;
+        public List<Inhabitant> listHabitant;
+        public PostBox objPostBox;
 
         public City(String prmNameCity)
         {
             Console.WriteLine("Creating " + prmNameCity + " city");
             nameCity = prmNameCity;
             objPostBox = new PostBox();
-            listHabitant = new ArrayList() ;
+            listHabitant = new List<Inhabitant>() ;
 
             Console.WriteLine("Creating 100 inhabitants");
-            for(int i = 0; i < 100; i++)
+            for(int i = 1; i <= 100; i++)
             {
-                listHabitant.Add(new Inhabitant(this));
+                listHabitant.Add(new Inhabitant(this, i));
             }
         }
 

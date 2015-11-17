@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    public class Letter
+    abstract public class Letter
     {
-        Sender objSender;
-        Receiver objReceiver;
-        Content objContent;
+        public Sender objSender;
+        public Receiver objReceiver;
+        protected int price;
 
-        public Letter(Sender prmSender, Receiver prmReceiver, Content prmContent)
+        public Letter(Sender prmSender, Receiver prmReceiver)
         {
             objSender = prmSender;
             objReceiver = prmReceiver;
-            objContent = prmContent;
         }
+
+        abstract public String putContent();
+        abstract public String getDescription();
+        abstract public int getPrice();
+        abstract public void executeContent();
     }
 }

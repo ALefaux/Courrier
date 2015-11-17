@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using pqtcourrier;
+using System.Collections.Generic;
 
 namespace pqtcity
 {
-    class PostBox
+    public class PostBox
     {
-        ArrayList listCourrier;
+        List<Letter> listCourrier;
 
         public PostBox()
         {
-            listCourrier = new ArrayList();
+            listCourrier = new List<Letter>();
         }
 
         public void addCourrier(Letter prmLetter)
@@ -26,16 +27,22 @@ namespace pqtcity
             return listCourrier.Count;
         }
 
-        public Letter getCourrier(int i)
+        public void distributeCourrier()
         {
-            Letter tempCourrier = (Letter)listCourrier[i];
+            /*Letter tempCourrier = (Letter)listCourrierReceive[i];
             removeCourrier(i);
-            return tempCourrier;
+            return tempCourrier;*/
+
+            foreach(Letter objLetter in listCourrier)
+            {
+                objLetter.objReceiver.objInhabitant.receiveLetter(objLetter);
+                objLetter.executeContent();
+            }
         }
 
-        public void removeCourrier(int i)
+        /*public void removeCourrier(int i)
         {
             listCourrier.Remove(i);
-        }
+        }*/
     }
 }
