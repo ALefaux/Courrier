@@ -10,30 +10,33 @@ namespace pqtcity
 {
     public class PostBox
     {
-        List<Letter> listCourrier;
+        public List<Letter> listCourrierReceive;
+        List<Letter> listCourrierSend;
 
         public PostBox()
         {
-            listCourrier = new List<Letter>();
+            listCourrierReceive = new List<Letter>();
         }
 
         public void addCourrier(Letter prmLetter)
         {
-            listCourrier.Add(prmLetter);
+            listCourrierReceive.Add(prmLetter);
         }
 
         public int nbCourrier()
         {
-            return listCourrier.Count;
+            return listCourrierReceive.Count;
         }
 
         public void distributeCourrier()
         {
-            /*Letter tempCourrier = (Letter)listCourrierReceive[i];
-            removeCourrier(i);
-            return tempCourrier;*/
+            listCourrierSend = listCourrierReceive.ToList();
+            listCourrierReceive.Clear();
 
-            foreach(Letter objLetter in listCourrier)
+            if (listCourrierSend.Count == 0)
+                Console.WriteLine("There is no letter to distribute today !");
+
+            foreach(Letter objLetter in listCourrierSend)
             {
                 objLetter.objReceiver.objInhabitant.receiveLetter(objLetter);
                 objLetter.executeContent();

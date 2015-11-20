@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    class Acknowledgment : Letter
+    public class Acknowledgment : SimpleLetter
     {
         int acknowledgmentPrice;
         String contentLetter;
-        public Acknowledgment(Sender prmSender, Receiver prmReceiver, String prmContent) : base(prmSender, prmReceiver)
+        public Acknowledgment(Sender prmSender, Receiver prmReceiver, String prmContent) : base(prmSender, prmReceiver, prmContent)
         {
-            price = acknowledgmentPrice = 1;
+            acknowledgmentPrice = 1;
             contentLetter = prmContent;
         }
 
@@ -23,17 +23,17 @@ namespace pqtcourrier
 
         public override string getDescription()
         {
-            return "Acknowledgment";
+            return "an acknowledgment of receipt";
         }
 
         public override int getPrice()
         {
-            throw new NotImplementedException();
+            return acknowledgmentPrice;
         }
 
         public override String putContent()
         {
-            return "witch is ";
+            return this.getDescription() + " which is a simple letter whose content is a text content (" + this.contentLetter + ")";
         }
     }
 }

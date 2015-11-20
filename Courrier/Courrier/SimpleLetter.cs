@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    class SimpleLetter : Letter
+    public class SimpleLetter : Letter
     {
         int simpleLetterPrice = 1;
         String simpleLetterMessage;

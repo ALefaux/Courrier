@@ -35,7 +35,7 @@ namespace pqtcity
 
         public void distributeLetters()
         {
-
+            objPostBox.distributeCourrier();
         }
 
         public string getNameCity()

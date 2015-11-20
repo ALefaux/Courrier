@@ -44,6 +44,18 @@ namespace pqtcity
             this.postLetter(prmReceiver, objRegisteredLetter);
         }
 
+        public void createThanksLetter(Inhabitant prmReceiver, string prmMessage)
+        {
+            Letter objThanksLetter = new ThanksLetter(new Sender(this), new Receiver(prmReceiver), prmMessage);
+            this.postLetter(prmReceiver, objThanksLetter);
+        }
+
+        public void createAcknowledgment(Inhabitant prmReceiver, string prmMessage)
+        {
+            Letter objAcknowledgment = new Acknowledgment(new Sender(this), new Receiver(prmReceiver), prmMessage);
+            this.postLetter(prmReceiver, objAcknowledgment);
+        }
+
         public BankAccount getBankAccount()
         {
             return objBankAccount;

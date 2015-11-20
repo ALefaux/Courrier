@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace pqtcourrier
 {
-    class PromissoryNote : Letter
+    public class PromissoryNote : Letter
     {
         int promissoryNotePrice;
-        int AmountSendContent;
+        public int AmountSendContent;
 
         public PromissoryNote(Sender prmSender, Receiver prmReceiver, int prmAmountSend) : base(prmSender, prmReceiver)
         {
-            price = promissoryNotePrice = 1 + (promissoryNotePrice * 1 / 100);
+            double letterCost = (double)prmAmountSend / 100;
+            price = promissoryNotePrice = 1 + (int)letterCost;
             AmountSendContent = prmAmountSend;
         }
 
@@ -37,6 +38,8 @@ namespace pqtcourrier
             Console.WriteLine("   - " + AmountSendContent + " euros are debites from inhabitant-" + objSender.objInhabitant.number + " account whose balance is now " + objSender.objInhabitant.objBankAccount.getAmount() + " euros");
             objReceiver.objInhabitant.objBankAccount.setCredit(AmountSendContent);
             Console.WriteLine("   + inhabitant-" + objReceiver.objInhabitant.number + " account is credited with " + AmountSendContent + " euros; its balance is now " + objReceiver.objInhabitant.objBankAccount.getAmount() + " euros");
+
+            objReceiver.objInhabitant.createThanksLetter(objSender.objInhabitant, "thanks for a promissory note letter whose content is a money content (" + AmountSendContent + ")");
             return;
         }
     }
